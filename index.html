@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Agronegócio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ====== CENÁRIO DE FUNDO ====== -->
+  <div id="scene">
+    <div id="sun"></div>
+    <div class="cloud" id="cloud1"><svg width="110" height="44" viewBox="0 0 110 44"><ellipse cx="55" cy="32" rx="50" ry="14" fill="white"/><ellipse cx="33" cy="24" rx="24" ry="19" fill="white"/><ellipse cx="66" cy="22" rx="28" ry="21" fill="white"/></svg></div>
+    <div class="cloud" id="cloud2"><svg width="80" height="34" viewBox="0 0 80 34"><ellipse cx="40" cy="24" rx="36" ry="11" fill="white" opacity="0.85"/><ellipse cx="24" cy="18" rx="18" ry="14" fill="white" opacity="0.85"/><ellipse cx="50" cy="16" rx="20" ry="15" fill="white" opacity="0.85"/></svg></div>
+    <svg id="hills" viewBox="0 0 800 120" preserveAspectRatio="none">
+      <path d="M0 80 Q100 30 200 70 Q300 110 400 55 Q500 0 600 60 Q700 110 800 50 L800 120 L0 120Z" fill="#4CAF50" opacity="0.45"/>
+      <path d="M0 90 Q150 55 300 80 Q450 105 600 72 Q700 55 800 85 L800 120 L0 120Z" fill="#388E3C" opacity="0.35"/>
+    </svg>
+    <svg id="fence" viewBox="0 0 840 60" preserveAspectRatio="none"></svg>
+  </div>
+
+  <!-- ====== BOTÃO MUTE ====== -->
+  <button id="btn-mute">🔊 Mute</button>
+
+  <!-- ====== TELA: INTRO ====== -->
+  <div class="screen active" id="screen-intro">
+    <div class="card">
+      <div class="plant-wrap" id="plant-intro">
+        <!-- planta SVG inserida pelo JS -->
+      </div>
+      <h1>Quiz Agronegócio</h1>
+      <p class="subtitle">Teste seus conhecimentos sobre o campo!</p>
+      <p class="hint">5 perguntas · Faça a planta crescer respondendo certo!</p>
+      <button class="btn-primary" id="btn-start">🌱 Iniciar o Jogo</button>
+    </div>
+  </div>
+
+  <!-- ====== TELA: QUIZ ====== -->
+  <div class="screen" id="screen-quiz">
+    <div class="card quiz-card">
+      <div id="progress-bar-wrap"><div id="progress-bar"></div></div>
+      <div class="quiz-header">
+        <span class="badge badge-green" id="label-question">Pergunta 1 de 5</span>
+        <span class="badge badge-yellow" id="label-score">⭐ 0 acertos</span>
+      </div>
+      <div class="plant-wrap" id="plant-quiz"></div>
+      <div id="feedback-box" class="hidden"></div>
+      <h2 id="question-text"></h2>
+      <div id="options"></div>
+      <div id="next-wrap" class="hidden">
+        <p id="explanation-text" class="explanation"></p>
+        <button class="btn-primary" id="btn-next">Próxima Pergunta →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== TELA: RESULTADO ====== -->
+  <div class="screen" id="screen-result">
+    <div class="card result-card">
+      <div class="plant-wrap" id="plant-result"></div>
+      <div id="result-emoji" class="result-emoji"></div>
+      <h2 id="result-title"></h2>
+      <p class="hint" id="result-subtitle">Você concluiu o quiz!</p>
+      <div id="score-box">
+        <span id="score-number"></span>
+        <span class="score-label">acertos</span>
+        <div id="stars"></div>
+      </div>
+      <button class="btn-primary" id="btn-restart">🔄 Reiniciar o Jogo</button>
+    </div>
+  </div>
+
+  <footer>🌾 Quiz Agronegócio Brasileiro</footer>
+
+  <script src="sketch.js"></script>
+</body>
+</html>
